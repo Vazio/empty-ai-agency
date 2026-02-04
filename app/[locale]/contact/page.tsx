@@ -1,6 +1,8 @@
 import { useTranslations } from 'next-intl';
+import ContactForm from '@/components/ContactForm';
 
-export default function Contact() {
+export default async function Contact({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
   const t = useTranslations('contact');
   
   return (
@@ -103,98 +105,10 @@ export default function Contact() {
             </div>
           </div>
 
-          {/* Contact Form - Glassmorphism */}
+          {/* Contact Form - Now using ContactForm component */}
           <div className="backdrop-blur-xl bg-white/80 dark:bg-gray-900/80 border border-gray-200/50 shadow-2xl rounded-3xl p-10 md:p-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-8">{t('form.title')}</h2>
-            <form className="space-y-6">
-              <div>
-                <label htmlFor="name" className="block text-base font-semibold mb-3">
-                  {t('form.nameRequired')}
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  required
-                  className="w-full px-6 py-4 bg-background border border-border rounded-2xl focus:outline-none focus:border-angola-red transition-all duration-300 text-lg"
-                  placeholder={t('form.name')}
-                />
-              </div>
-
-              <div>
-                <label htmlFor="email" className="block text-base font-semibold mb-3">
-                  {t('form.emailRequired')}
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  required
-                  className="w-full px-6 py-4 bg-background border border-border rounded-2xl focus:outline-none focus:border-angola-red transition-all duration-300 text-lg"
-                  placeholder={t('form.emailLabel')}
-                />
-              </div>
-
-              <div>
-                <label htmlFor="company" className="block text-base font-semibold mb-3">
-                  {t('form.company')}
-                </label>
-                <input
-                  type="text"
-                  id="company"
-                  name="company"
-                  className="w-full px-6 py-4 bg-background border border-border rounded-2xl focus:outline-none focus:border-angola-red transition-all duration-300 text-lg"
-                  placeholder={t('form.company')}
-                />
-              </div>
-
-              <div>
-                <label htmlFor="project" className="block text-base font-semibold mb-3">
-                  {t('form.projectType')}
-                </label>
-                <select
-                  id="project"
-                  name="project"
-                  className="w-full px-6 py-4 bg-background border border-border rounded-2xl focus:outline-none focus:border-angola-red transition-all duration-300 text-lg"
-                >
-                  <option value="">{t('form.selectType')}</option>
-                  <option value="web-app">{t('form.webApp')}</option>
-                  <option value="mobile-app">{t('form.mobileApp')}</option>
-                  <option value="ai-automation">{t('form.aiAutomation')}</option>
-                  <option value="enterprise">{t('form.enterprise')}</option>
-                  <option value="consulting">{t('form.consulting')}</option>
-                  <option value="other">{t('form.other')}</option>
-                </select>
-              </div>
-
-              <div>
-                <label htmlFor="message" className="block text-base font-semibold mb-3">
-                  {t('form.messageRequired')}
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  required
-                  rows={6}
-                  className="w-full px-6 py-4 bg-background border border-border rounded-2xl focus:outline-none focus:border-angola-red transition-all duration-300 resize-none text-lg"
-                  placeholder={t('form.messagePlaceholder')}
-                />
-              </div>
-
-              <button
-                type="submit"
-                className="w-full px-10 py-4 bg-angola-red hover:bg-angola-red-dark text-white rounded-2xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
-              >
-                {t('form.send')}
-              </button>
-
-              <p className="text-sm text-foreground/60 text-center">
-                {t('form.note')}{' '}
-                <a href="mailto:empty.vl.angola@gmail.com" className="text-accent hover:underline">
-                  empty.vl.angola@gmail.com
-                </a>
-              </p>
-            </form>
+            <ContactForm locale={locale} />
           </div>
         </div>
 
