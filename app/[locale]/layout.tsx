@@ -49,26 +49,26 @@ export default async function LocaleLayout({
     <html lang={locale}>
       <body>
         <NextIntlClientProvider messages={messages}>
-          <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
-            <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 xl:px-12">
-              <div className="flex justify-between items-center h-16">
-                <a href={`/${locale}`} className="text-2xl font-bold">
-                  <span className="text-accent">Empty</span> AI Agency
+          <nav className="sticky top-0 left-0 right-0 z-50 backdrop-blur-md bg-white/80 dark:bg-gray-900/80 border-b border-gray-200/50 shadow-sm transition-all duration-300">
+            <div className="max-w-screen-xl mx-auto px-4 md:px-6 lg:px-8 xl:px-12">
+              <div className="flex justify-between items-center h-20">
+                <a href={`/${locale}`} className="text-2xl md:text-3xl font-bold">
+                  <span className="text-angola-red">Empty</span> AI Agency
                 </a>
-                <div className="hidden md:flex items-center space-x-6">
-                  <a href={`/${locale}`} className="hover:text-accent transition-colors">
+                <div className="hidden md:flex items-center space-x-8 text-base font-medium">
+                  <a href={`/${locale}`} className="hover:text-angola-red transition-colors duration-300">
                     {locale === 'pt' ? 'Início' : 'Home'}
                   </a>
-                  <a href={`/${locale}/projects`} className="hover:text-accent transition-colors">
+                  <a href={`/${locale}/projects`} className="hover:text-angola-red transition-colors duration-300">
                     {locale === 'pt' ? 'Projetos' : 'Projects'}
                   </a>
-                  <a href={`/${locale}/about`} className="hover:text-accent transition-colors">
+                  <a href={`/${locale}/about`} className="hover:text-angola-red transition-colors duration-300">
                     {locale === 'pt' ? 'Sobre' : 'About'}
                   </a>
-                  <a href={`/${locale}/case-studies`} className="hover:text-accent transition-colors">
+                  <a href={`/${locale}/case-studies`} className="hover:text-angola-red transition-colors duration-300">
                     {locale === 'pt' ? 'Casos de Estudo' : 'Case Studies'}
                   </a>
-                  <a href={`/${locale}/contact`} className="hover:text-accent transition-colors">
+                  <a href={`/${locale}/contact`} className="hover:text-angola-red transition-colors duration-300">
                     {locale === 'pt' ? 'Contacto' : 'Contact'}
                   </a>
                   <div className="ml-4 pl-4 border-l border-border">
@@ -135,8 +135,16 @@ export default async function LocaleLayout({
                   </ul>
                 </div>
               </div>
-              <div className="mt-8 pt-8 border-t border-border text-center text-sm text-foreground/60">
-                <p>&copy; {new Date().getFullYear()} Empty AI Agency. {locale === 'pt' ? 'Construído com' : 'Built with'} Next.js & TypeScript.</p>
+              <div className="mt-8 pt-8 border-t border-border text-center">
+                {/* Angola Pride Badge */}
+                <div className="mb-6">
+                  <span className="inline-block px-6 py-2 bg-angola-red/10 border border-angola-red/20 rounded-full text-sm font-medium text-angola-red">
+                    {locale === 'pt' ? 'Orgulhosamente construído em Angola 🇦🇴' : 'Proudly built in Angola 🇦🇴'}
+                  </span>
+                </div>
+                <p className="text-sm text-foreground/60">
+                  &copy; {new Date().getFullYear()} Empty AI Agency. {locale === 'pt' ? 'Construído com' : 'Built with'} Next.js & TypeScript.
+                </p>
               </div>
             </div>
           </footer>
