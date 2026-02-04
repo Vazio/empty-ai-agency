@@ -38,7 +38,7 @@ export default function Projects() {
           {projects.map((project, index) => (
             <div 
               key={index}
-              className="backdrop-blur-xl bg-white/80 dark:bg-gray-900/80 border border-gray-200/50 shadow-2xl rounded-3xl overflow-hidden hover:-translate-y-2 hover:shadow-3xl transition-all duration-500"
+              className="group backdrop-blur-xl bg-white/80 dark:bg-gray-900/80 border border-gray-200/50 shadow-2xl rounded-3xl overflow-hidden hover:-translate-y-2 hover:shadow-3xl hover:border-angola-red/30 transition-all duration-500"
             >
               {/* Project Image Placeholder */}
               <div className="bg-gradient-to-br from-gray-800 to-gray-900 border-b border-gray-200/50 h-80 flex items-center justify-center relative overflow-hidden">
@@ -88,10 +88,10 @@ export default function Projects() {
                 {project.link !== '#' && (
                   <a 
                     href={project.link}
-                    className="inline-flex items-center text-angola-red hover:text-angola-red-dark font-bold text-lg transition-colors duration-300"
+                    className="inline-flex items-center text-angola-red hover:text-angola-red-dark font-bold text-lg transition-all duration-300 group/link"
                   >
                     View Case Study
-                    <svg className="w-6 h-6 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-6 h-6 ml-3 transition-transform duration-300 group-hover/link:translate-x-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                     </svg>
                   </a>

@@ -72,6 +72,8 @@ export default function ContactForm({ locale }: { locale: string }) {
     }
   };
 
+  const inputClassName = "w-full px-6 py-4 bg-background border border-border rounded-2xl focus:outline-none focus:border-angola-red focus:ring-2 focus:ring-angola-red/20 transition-all duration-300 text-lg disabled:opacity-50 disabled:cursor-not-allowed hover:border-angola-red/50";
+
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
       <div>
@@ -86,7 +88,7 @@ export default function ContactForm({ locale }: { locale: string }) {
           value={formData.name}
           onChange={handleChange}
           disabled={status === 'loading'}
-          className="w-full px-6 py-4 bg-background border border-border rounded-2xl focus:outline-none focus:border-angola-red transition-all duration-300 text-lg disabled:opacity-50 disabled:cursor-not-allowed"
+          className={inputClassName}
           placeholder={t('form.name')}
         />
       </div>
@@ -103,7 +105,7 @@ export default function ContactForm({ locale }: { locale: string }) {
           value={formData.email}
           onChange={handleChange}
           disabled={status === 'loading'}
-          className="w-full px-6 py-4 bg-background border border-border rounded-2xl focus:outline-none focus:border-angola-red transition-all duration-300 text-lg disabled:opacity-50 disabled:cursor-not-allowed"
+          className={inputClassName}
           placeholder={t('form.emailLabel')}
         />
       </div>
@@ -119,7 +121,7 @@ export default function ContactForm({ locale }: { locale: string }) {
           value={formData.company}
           onChange={handleChange}
           disabled={status === 'loading'}
-          className="w-full px-6 py-4 bg-background border border-border rounded-2xl focus:outline-none focus:border-angola-red transition-all duration-300 text-lg disabled:opacity-50 disabled:cursor-not-allowed"
+          className={inputClassName}
           placeholder={t('form.company')}
         />
       </div>
@@ -134,7 +136,7 @@ export default function ContactForm({ locale }: { locale: string }) {
           value={formData.project}
           onChange={handleChange}
           disabled={status === 'loading'}
-          className="w-full px-6 py-4 bg-background border border-border rounded-2xl focus:outline-none focus:border-angola-red transition-all duration-300 text-lg disabled:opacity-50 disabled:cursor-not-allowed"
+          className={inputClassName}
         >
           <option value="">{t('form.selectType')}</option>
           <option value="web-app">{t('form.webApp')}</option>
@@ -158,7 +160,7 @@ export default function ContactForm({ locale }: { locale: string }) {
           value={formData.message}
           onChange={handleChange}
           disabled={status === 'loading'}
-          className="w-full px-6 py-4 bg-background border border-border rounded-2xl focus:outline-none focus:border-angola-red transition-all duration-300 resize-none text-lg disabled:opacity-50 disabled:cursor-not-allowed"
+          className="w-full px-6 py-4 bg-background border border-border rounded-2xl focus:outline-none focus:border-angola-red focus:ring-2 focus:ring-angola-red/20 transition-all duration-300 resize-none text-lg disabled:opacity-50 disabled:cursor-not-allowed hover:border-angola-red/50"
           placeholder={t('form.messagePlaceholder')}
         />
       </div>
@@ -166,7 +168,7 @@ export default function ContactForm({ locale }: { locale: string }) {
       <button
         type="submit"
         disabled={status === 'loading'}
-        className="w-full px-10 py-4 bg-angola-red hover:bg-angola-red-dark text-white rounded-2xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
+        className="w-full px-10 py-4 bg-angola-red hover:bg-angola-red-dark text-white rounded-2xl font-semibold text-lg shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 hover:-translate-y-1 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
       >
         {status === 'loading' ? (
           <span className="flex items-center justify-center">
@@ -183,7 +185,7 @@ export default function ContactForm({ locale }: { locale: string }) {
 
       {/* Success Message */}
       {status === 'success' && (
-        <div className="p-4 bg-green-500/10 border border-green-500/20 rounded-2xl">
+        <div className="p-4 bg-green-500/10 border border-green-500/20 rounded-2xl animate-fade-in">
           <div className="flex items-start">
             <svg className="w-6 h-6 text-green-600 mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
@@ -202,7 +204,7 @@ export default function ContactForm({ locale }: { locale: string }) {
 
       {/* Error Message */}
       {status === 'error' && (
-        <div className="p-4 bg-red-500/10 border border-red-500/20 rounded-2xl">
+        <div className="p-4 bg-red-500/10 border border-red-500/20 rounded-2xl animate-fade-in">
           <div className="flex items-start">
             <svg className="w-6 h-6 text-red-600 mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -221,7 +223,7 @@ export default function ContactForm({ locale }: { locale: string }) {
 
       <p className="text-sm text-foreground/60 text-center">
         {t('form.note')}{' '}
-        <a href="mailto:empty.vl.angola@gmail.com" className="text-angola-red hover:underline">
+        <a href="mailto:empty.vl.angola@gmail.com" className="text-angola-red hover:text-angola-red-dark hover:underline transition-all duration-300">
           empty.vl.angola@gmail.com
         </a>
       </p>

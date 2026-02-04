@@ -41,8 +41,8 @@ export default function About() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 lg:gap-16">
             {/* EmptyBot */}
-            <div className="backdrop-blur-xl bg-white/80 dark:bg-gray-900/80 border border-gray-200/50 shadow-2xl rounded-3xl p-10 hover:-translate-y-2 transition-all duration-300">
-              <div className="w-24 h-24 bg-angola-yellow/20 border-4 border-angola-red rounded-full flex items-center justify-center mb-6">
+            <div className="group backdrop-blur-xl bg-white/80 dark:bg-gray-900/80 border border-gray-200/50 shadow-2xl rounded-3xl p-10 hover:-translate-y-2 hover:shadow-3xl hover:border-angola-red/30 transition-all duration-300">
+              <div className="w-24 h-24 bg-angola-yellow/20 border-4 border-angola-red rounded-full flex items-center justify-center mb-6 group-hover:bg-angola-yellow/30 transition-colors duration-300">
                 <svg className="w-12 h-12 text-angola-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
                 </svg>
@@ -57,8 +57,8 @@ export default function About() {
             </div>
 
             {/* Sub-Agents */}
-            <div className="backdrop-blur-xl bg-white/80 dark:bg-gray-900/80 border border-gray-200/50 shadow-2xl rounded-3xl p-10 hover:-translate-y-2 transition-all duration-300">
-              <div className="w-24 h-24 bg-angola-yellow/20 border-4 border-angola-red rounded-full flex items-center justify-center mb-6">
+            <div className="group backdrop-blur-xl bg-white/80 dark:bg-gray-900/80 border border-gray-200/50 shadow-2xl rounded-3xl p-10 hover:-translate-y-2 hover:shadow-3xl hover:border-angola-red/30 transition-all duration-300">
+              <div className="w-24 h-24 bg-angola-yellow/20 border-4 border-angola-red rounded-full flex items-center justify-center mb-6 group-hover:bg-angola-yellow/30 transition-colors duration-300">
                 <svg className="w-12 h-12 text-angola-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                 </svg>
@@ -195,8 +195,8 @@ export default function About() {
             We&apos;re always looking for exciting projects and partnerships in <span className="text-angola-red font-semibold">Angola</span> and beyond.
           </p>
           <a 
-            href="/contact" 
-            className="inline-block px-10 py-4 bg-angola-red hover:bg-angola-red-dark text-white rounded-2xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+            href="../contact" 
+            className="inline-block px-10 py-4 bg-angola-red hover:bg-angola-red-dark text-white rounded-2xl font-semibold text-lg shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 hover:-translate-y-1"
           >
             Get in Touch
           </a>

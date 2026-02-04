@@ -23,13 +23,13 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row gap-6 justify-center mb-16">
             <a 
               href="./projects" 
-              className="px-10 py-4 bg-angola-red hover:bg-angola-red-dark text-white rounded-2xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 whitespace-nowrap"
+              className="px-10 py-4 bg-angola-red hover:bg-angola-red-dark text-white rounded-2xl font-semibold text-lg shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 hover:-translate-y-1 whitespace-nowrap"
             >
               {t('hero.viewWork')}
             </a>
             <a 
               href="./contact" 
-              className="px-10 py-4 border-2 border-angola-red text-angola-red hover:bg-angola-red hover:text-white rounded-2xl font-semibold text-lg transition-all duration-300 transform hover:scale-105 whitespace-nowrap"
+              className="px-10 py-4 border-2 border-angola-red text-angola-red hover:bg-angola-red hover:text-white rounded-2xl font-semibold text-lg transition-all duration-300 transform hover:scale-105 hover:-translate-y-1 whitespace-nowrap"
             >
               {t('hero.getInTouch')}
             </a>
@@ -37,12 +37,12 @@ export default function Home() {
           
           {/* Dashboard Screenshot Showcase */}
           <div className="max-w-6xl mx-auto">
-            <div className="backdrop-blur-xl bg-white/10 rounded-3xl border border-white/20 shadow-2xl overflow-hidden transform hover:-translate-y-2 transition-all duration-500">
+            <div className="backdrop-blur-xl bg-white/10 rounded-3xl border border-white/20 shadow-2xl overflow-hidden transform hover:-translate-y-2 hover:shadow-3xl transition-all duration-500">
               <div className="aspect-video bg-background/10 border-b border-white/10 overflow-hidden">
                 <img 
                   src="/images/dashboard-preview-placeholder.svg" 
                   alt="Dashboard Financeiro Angola Preview" 
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
                 />
               </div>
             </div>
@@ -64,8 +64,8 @@ export default function Home() {
             {t('services.title')} <span className="text-accent">{t('services.titleAccent')}</span>
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 lg:gap-16">
-            <div className="backdrop-blur-xl bg-white/80 dark:bg-gray-900/80 border border-gray-200/50 shadow-2xl rounded-3xl p-10 hover:-translate-y-2 transition-all duration-300">
-              <div className="w-14 h-14 bg-angola-yellow/20 rounded-2xl flex items-center justify-center mb-6">
+            <div className="group backdrop-blur-xl bg-white/80 dark:bg-gray-900/80 border border-gray-200/50 shadow-2xl rounded-3xl p-10 hover:-translate-y-2 hover:shadow-3xl hover:border-angola-red/30 transition-all duration-300">
+              <div className="w-14 h-14 bg-angola-yellow/20 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-angola-yellow/30 transition-colors duration-300">
                 <svg className="w-7 h-7 text-angola-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
                 </svg>
@@ -76,8 +76,8 @@ export default function Home() {
               </p>
             </div>
             
-            <div className="backdrop-blur-xl bg-white/80 dark:bg-gray-900/80 border border-gray-200/50 shadow-2xl rounded-3xl p-10 hover:-translate-y-2 transition-all duration-300">
-              <div className="w-14 h-14 bg-angola-yellow/20 rounded-2xl flex items-center justify-center mb-6">
+            <div className="group backdrop-blur-xl bg-white/80 dark:bg-gray-900/80 border border-gray-200/50 shadow-2xl rounded-3xl p-10 hover:-translate-y-2 hover:shadow-3xl hover:border-angola-red/30 transition-all duration-300">
+              <div className="w-14 h-14 bg-angola-yellow/20 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-angola-yellow/30 transition-colors duration-300">
                 <svg className="w-7 h-7 text-angola-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
                 </svg>
@@ -88,8 +88,8 @@ export default function Home() {
               </p>
             </div>
             
-            <div className="backdrop-blur-xl bg-white/80 dark:bg-gray-900/80 border border-gray-200/50 shadow-2xl rounded-3xl p-10 hover:-translate-y-2 transition-all duration-300">
-              <div className="w-14 h-14 bg-angola-yellow/20 rounded-2xl flex items-center justify-center mb-6">
+            <div className="group backdrop-blur-xl bg-white/80 dark:bg-gray-900/80 border border-gray-200/50 shadow-2xl rounded-3xl p-10 hover:-translate-y-2 hover:shadow-3xl hover:border-angola-red/30 transition-all duration-300">
+              <div className="w-14 h-14 bg-angola-yellow/20 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-angola-yellow/30 transition-colors duration-300">
                 <svg className="w-7 h-7 text-angola-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
@@ -133,19 +133,19 @@ export default function Home() {
                 </div>
                 <a 
                   href="./case-studies/dashboard-financeiro" 
-                  className="inline-flex items-center text-angola-red hover:text-angola-red-dark font-bold text-lg md:text-xl transition-colors duration-300"
+                  className="inline-flex items-center text-angola-red hover:text-angola-red-dark font-bold text-lg md:text-xl transition-all duration-300 group"
                 >
                   {t('featured.readCaseStudy')}
-                  <svg className="w-6 h-6 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-6 h-6 ml-3 transition-transform duration-300 group-hover:translate-x-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </svg>
                 </a>
               </div>
-              <div className="rounded-2xl overflow-hidden shadow-xl transform hover:-translate-y-2 transition-all duration-500">
+              <div className="rounded-2xl overflow-hidden shadow-xl transform hover:-translate-y-2 hover:shadow-3xl transition-all duration-500">
                 <img 
                   src="/images/dashboard-preview-placeholder.svg" 
                   alt="Dashboard Financeiro Angola Preview" 
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
                 />
               </div>
             </div>
@@ -163,7 +163,7 @@ export default function Home() {
             {['Next.js', 'TypeScript', 'React', 'Prisma', 'PostgreSQL', 'Redis', 'TailwindCSS', 'Node.js', 'Vercel', 'Git', 'REST APIs', 'AI Agents'].map((tech) => (
               <div 
                 key={tech} 
-                className="backdrop-blur-xl bg-white/80 dark:bg-gray-900/80 border border-gray-200/50 shadow-xl rounded-2xl p-8 text-center hover:-translate-y-2 hover:border-accent transition-all duration-300"
+                className="backdrop-blur-xl bg-white/80 dark:bg-gray-900/80 border border-gray-200/50 shadow-xl rounded-2xl p-8 text-center hover:-translate-y-2 hover:shadow-2xl hover:border-angola-red/30 transition-all duration-300 cursor-default"
               >
                 <p className="font-bold text-lg">{tech}</p>
               </div>
@@ -183,7 +183,7 @@ export default function Home() {
           </p>
           <a 
             href="./contact" 
-            className="inline-block px-10 py-4 bg-angola-red hover:bg-angola-red-dark text-white rounded-2xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 whitespace-nowrap"
+            className="inline-block px-10 py-4 bg-angola-red hover:bg-angola-red-dark text-white rounded-2xl font-semibold text-lg shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 hover:-translate-y-1 whitespace-nowrap"
           >
             {t('cta.button')}
           </a>
