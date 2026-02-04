@@ -1,0 +1,341 @@
+{
+  "nav": {
+    "home": "Home",
+    "projects": "Projects",
+    "about": "About",
+    "caseStudies": "Case Studies",
+    "contact": "Contact"
+  },
+  "home": {
+    "hero": {
+      "title": "AI-Powered Solutions",
+      "subtitle": "for Angola",
+      "description": "Building scalable technology solutions with autonomous agents, modern frameworks, and intelligent automation.",
+      "viewWork": "View Our Work",
+      "getInTouch": "Get in Touch"
+    },
+    "services": {
+      "title": "What We",
+      "titleAccent": "Build",
+      "aiAutomation": {
+        "title": "AI Automation",
+        "description": "Autonomous agent workflows that handle complex tasks, from data processing to customer interactions."
+      },
+      "fullStack": {
+        "title": "Full-Stack Development",
+        "description": "Modern web applications with Next.js, TypeScript, Prisma, PostgreSQL, and Redis for blazing-fast performance."
+      },
+      "scalable": {
+        "title": "Scalable Solutions",
+        "description": "Cloud-native architecture designed to grow with your business, from MVP to enterprise scale."
+      }
+    },
+    "featured": {
+      "title": "Featured",
+      "titleAccent": "Project",
+      "projectTitle": "Dashboard Financeiro Angola",
+      "projectDescription": "A comprehensive financial management platform built for the Angolan market, featuring real-time data visualization, multi-currency support, and intelligent insights.",
+      "readCaseStudy": "Read Case Study"
+    },
+    "techStack": {
+      "title": "Our",
+      "titleAccent": "Tech Stack"
+    },
+    "cta": {
+      "title": "Ready to Build Something",
+      "titleAccent": "Amazing",
+      "description": "Let's discuss how we can help bring your vision to life with cutting-edge technology.",
+      "button": "Start a Conversation"
+    }
+  },
+  "projects": {
+    "title": "Our",
+    "titleAccent": "Projects",
+    "description": "Explore the solutions we've built with cutting-edge technology and intelligent automation.",
+    "dashboardTitle": "Dashboard Financeiro Angola",
+    "dashboardDescription": "Comprehensive financial management platform with real-time analytics, multi-currency support, and intelligent insights tailored for the Angolan market.",
+    "futureTitle": "Future Projects",
+    "futureDescription": "We're constantly working on new innovative solutions. Stay tuned for upcoming projects in AI automation, fintech, and enterprise software.",
+    "status": {
+      "live": "Live",
+      "comingSoon": "Coming Soon"
+    },
+    "viewCaseStudy": "View Case Study",
+    "screenshots": "Screenshots coming soon",
+    "capabilities": {
+      "title": "Project",
+      "titleAccent": "Capabilities",
+      "fullStack": {
+        "title": "Full-Stack Development",
+        "description": "End-to-end development from database design to responsive frontend, deployed on cloud infrastructure."
+      },
+      "aiIntegration": {
+        "title": "AI Integration",
+        "description": "Autonomous agents and intelligent workflows that automate complex business processes."
+      },
+      "performance": {
+        "title": "Performance Optimization",
+        "description": "Lightning-fast applications with server-side rendering, caching strategies, and optimized data flows."
+      }
+    }
+  },
+  "about": {
+    "title": "About",
+    "titleAccent": "Empty AI Agency",
+    "description": "We're building the future of software development in Angola with AI-powered automation and modern technology.",
+    "mission": {
+      "title": "Our",
+      "titleAccent": "Mission",
+      "description": "To empower Angolan businesses with cutting-edge technology solutions that are scalable, intelligent, and tailored to local market needs. We leverage autonomous AI agents, modern frameworks, and best practices to deliver exceptional software faster and more efficiently."
+    },
+    "team": {
+      "title": "Meet the",
+      "titleAccent": "Team",
+      "emptybot": {
+        "title": "EmptyBot",
+        "role": "Lead AI Agent",
+        "description": "The primary orchestrator behind Empty AI Agency. EmptyBot coordinates development, manages infrastructure, and ensures every project meets our high quality standards. Powered by advanced language models and autonomous decision-making capabilities."
+      },
+      "subAgents": {
+        "title": "Autonomous Sub-Agents",
+        "role": "Specialized AI Workforce",
+        "description": "A fleet of specialized agents handling specific tasks: code generation, testing, deployment, documentation, and monitoring. Each agent operates independently while collaborating seamlessly to deliver production-ready solutions."
+      }
+    },
+    "techStack": {
+      "title": "Technology",
+      "titleAccent": "Stack",
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "aiAutomation": "AI & Automation",
+      "devops": "DevOps & Cloud"
+    },
+    "approach": {
+      "title": "Our",
+      "titleAccent": "Approach",
+      "understand": {
+        "title": "Understand",
+        "description": "Deep dive into your business needs, challenges, and goals to craft the perfect solution."
+      },
+      "build": {
+        "title": "Build",
+        "description": "Rapid development with autonomous agents and modern frameworks, delivering working software fast."
+      },
+      "scale": {
+        "title": "Scale",
+        "description": "Deploy on robust infrastructure that grows with you, with continuous monitoring and improvements."
+      }
+    },
+    "cta": {
+      "title": "Want to Work With Us?",
+      "description": "We're always looking for exciting projects and partnerships in Angola and beyond.",
+      "button": "Get in Touch"
+    }
+  },
+  "contact": {
+    "title": "Get in",
+    "titleAccent": "Touch",
+    "description": "Have a project in mind? Let's discuss how Empty AI Agency can help bring your vision to life.",
+    "letsConnect": "Let's Connect",
+    "email": "Email",
+    "github": "GitHub",
+    "location": "Location",
+    "angola": "Angola",
+    "whatToExpect": {
+      "title": "What to Expect",
+      "response": "Response within 24-48 hours",
+      "consultation": "Free initial consultation",
+      "proposal": "Detailed project proposal and timeline",
+      "communication": "Transparent communication throughout"
+    },
+    "form": {
+      "title": "Send us a Message",
+      "name": "Name",
+      "nameRequired": "Name *",
+      "emailLabel": "Email",
+      "emailRequired": "Email *",
+      "company": "Company (Optional)",
+      "projectType": "Project Type",
+      "selectType": "Select a project type",
+      "webApp": "Web Application",
+      "mobileApp": "Mobile Application",
+      "aiAutomation": "AI Automation",
+      "enterprise": "Enterprise Solution",
+      "consulting": "Consulting",
+      "other": "Other",
+      "message": "Message",
+      "messageRequired": "Message *",
+      "messagePlaceholder": "Tell us about your project...",
+      "send": "Send Message",
+      "note": "Note: This form is currently for display purposes. Please email us directly at"
+    },
+    "cta": {
+      "title": "Ready to Start Your Project?",
+      "description": "Whether you're looking to build a new application, automate your workflows, or scale your existing infrastructure, we're here to help.",
+      "viewWork": "View Our Work",
+      "learnMore": "Learn More About Us"
+    }
+  },
+  "caseStudies": {
+    "title": "Case",
+    "titleAccent": "Studies",
+    "description": "Deep dives into the projects we've built, the challenges we've solved, and the impact we've delivered.",
+    "category": {
+      "fintech": "Fintech"
+    },
+    "comingSoon": {
+      "title": "More Coming Soon",
+      "description": "We're working on exciting new projects. Check back soon for more case studies."
+    },
+    "whyShare": {
+      "title": "Why We Share Our",
+      "titleAccent": "Work",
+      "transparency": {
+        "title": "Transparency",
+        "description": "We believe in showing our process, challenges, and solutions openly."
+      },
+      "learning": {
+        "title": "Learning",
+        "description": "Every project teaches us something new that we can apply to future work."
+      },
+      "impact": {
+        "title": "Impact",
+        "description": "Demonstrating real-world results helps future clients understand our capabilities."
+      }
+    }
+  },
+  "dashboard": {
+    "title": "Dashboard Financeiro Angola",
+    "subtitle": "A modern financial management platform built for the Angolan market",
+    "backToCaseStudies": "Back to Case Studies",
+    "overview": {
+      "challenge": "Challenge",
+      "challengeText": "Angolan businesses needed a modern, localized financial management solution with multi-currency support and real-time insights.",
+      "solution": "Solution",
+      "solutionText": "Built a full-stack web application with autonomous AI agents handling data processing, analytics, and intelligent recommendations.",
+      "impact": "Impact",
+      "impactText": "Production-ready platform deployed on Vercel with automatic deployments, real-time updates, and enterprise-grade performance."
+    },
+    "problem": {
+      "title": "The",
+      "titleAccent": "Problem",
+      "description": "The Angolan market lacked modern, web-based financial management tools that understood local currency dynamics (AOA), business practices, and regulatory requirements. Existing solutions were either:",
+      "issues": {
+        "outdated": "Outdated desktop software with poor user experience",
+        "international": "International SaaS platforms not localized for Angola",
+        "expensive": "Expensive enterprise solutions beyond reach of SMEs",
+        "manual": "Manual spreadsheet-based workflows prone to errors"
+      },
+      "conclusion": "Businesses needed a solution that combined modern web technology, local market understanding, and intelligent automation to streamline financial operations."
+    },
+    "solution": {
+      "title": "The",
+      "titleAccent": "Solution",
+      "features": {
+        "title": "Core Features",
+        "dashboard": {
+          "title": "Real-Time Dashboard",
+          "description": "Live financial metrics, cash flow visualization, and performance indicators updated in real-time."
+        },
+        "currency": {
+          "title": "Multi-Currency Support",
+          "description": "Native AOA support with automatic exchange rate updates for USD, EUR, and other currencies."
+        },
+        "transactions": {
+          "title": "Transaction Management",
+          "description": "Track income, expenses, and transfers with categorization and tagging capabilities."
+        },
+        "analytics": {
+          "title": "Analytics & Reports",
+          "description": "Automated financial reports, trend analysis, and customizable data visualizations."
+        }
+      },
+      "architecture": {
+        "title": "Technical Architecture",
+        "description": "Built with a modern, scalable stack designed for performance and maintainability:",
+        "frontend": "Frontend",
+        "backend": "Backend"
+      }
+    },
+    "aiAutomation": {
+      "title": "AI &",
+      "titleAccent": "Automation",
+      "description": "EmptyBot and autonomous sub-agents handled the entire development lifecycle:",
+      "codeGen": {
+        "title": "Code Generation",
+        "description": "Automated scaffolding, component creation, and API endpoint generation with type-safe patterns."
+      },
+      "testing": {
+        "title": "Testing & QA",
+        "description": "Continuous testing of features, edge cases, and performance bottlenecks throughout development."
+      },
+      "deployment": {
+        "title": "Deployment",
+        "description": "Automated builds, zero-downtime deployments to Vercel, and continuous monitoring."
+      },
+      "documentation": {
+        "title": "Documentation",
+        "description": "Automatic generation of technical docs, API references, and deployment guides."
+      }
+    },
+    "results": {
+      "title": "Results &",
+      "titleAccent": "Impact",
+      "metrics": {
+        "aiPowered": "100%",
+        "aiPoweredLabel": "AI-Powered Development",
+        "fast": "Fast",
+        "fastLabel": "Sub-second Load Times",
+        "modern": "Modern",
+        "modernLabel": "Latest Tech Stack"
+      },
+      "achievements": {
+        "title": "Key Achievements",
+        "production": "Production-ready application deployed on Vercel with automatic CI/CD",
+        "responsive": "Mobile-responsive design working seamlessly across all devices",
+        "performance": "High-performance architecture with PostgreSQL + Redis caching",
+        "typeSafe": "Type-safe codebase with comprehensive TypeScript coverage",
+        "scalable": "Scalable architecture ready for thousands of concurrent users"
+      }
+    },
+    "techChoices": {
+      "title": "Technology",
+      "titleAccent": "Choices",
+      "nextjs": {
+        "title": "Why Next.js 14?",
+        "description": "Server Components, App Router, and built-in optimizations provide exceptional performance and developer experience. Perfect for building fast, SEO-friendly financial dashboards."
+      },
+      "typescript": {
+        "title": "Why TypeScript?",
+        "description": "Type safety prevents bugs before they reach production. Critical for financial applications where data accuracy and reliability are paramount."
+      },
+      "prisma": {
+        "title": "Why Prisma + PostgreSQL?",
+        "description": "Type-safe database queries, automatic migrations, and PostgreSQL's reliability ensure data integrity and scalability for growing businesses."
+      },
+      "redis": {
+        "title": "Why Redis?",
+        "description": "Lightning-fast caching for frequently accessed data like exchange rates and user sessions, dramatically improving response times."
+      }
+    },
+    "cta": {
+      "title": "Want to Build Something Similar?",
+      "description": "Let's discuss how we can create a custom solution for your business needs.",
+      "startProject": "Start a Project",
+      "viewMore": "View More Projects"
+    }
+  },
+  "footer": {
+    "tagline": "AI-powered solutions for Angola's digital future.",
+    "quickLinks": "Quick Links",
+    "contact": "Contact",
+    "builtWith": "Built with Next.js & TypeScript.",
+    "copyright": "Empty AI Agency. All rights reserved."
+  },
+  "common": {
+    "readMore": "Read More",
+    "learnMore": "Learn More",
+    "viewAll": "View All",
+    "backToTop": "Back to Top"
+  }
+}
