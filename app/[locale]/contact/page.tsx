@@ -1,9 +1,9 @@
-import { useTranslations } from 'next-intl';
+import { getTranslations } from 'next-intl/server';
 import ContactForm from '@/components/ContactForm';
 
 export default async function Contact({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
-  const t = useTranslations('contact');
+  const t = await getTranslations('contact');
   
   return (
     <div className="min-h-screen py-16 md:py-24 lg:py-32">
