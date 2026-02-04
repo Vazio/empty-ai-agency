@@ -3,7 +3,7 @@ export default function DashboardFinanceiroCaseStudy() {
     <div className="min-h-screen">
       {/* Hero */}
       <section className="bg-gradient-to-br from-accent/10 via-background to-background py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 xl:px-12">
           <a href="/case-studies" className="inline-flex items-center text-accent hover:text-accent-dark mb-8">
             <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -25,7 +25,7 @@ export default function DashboardFinanceiroCaseStudy() {
 
       {/* Overview */}
       <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 xl:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
             <div>
               <h3 className="text-sm font-semibold text-accent uppercase tracking-wide mb-2">Challenge</h3>
@@ -51,7 +51,7 @@ export default function DashboardFinanceiroCaseStudy() {
 
       {/* The Problem */}
       <section className="py-20 bg-muted">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto px-4 md:px-6 lg:px-8 xl:px-12">
           <h2 className="text-3xl font-bold mb-8">
             The <span className="text-accent">Problem</span>
           </h2>
@@ -77,7 +77,7 @@ export default function DashboardFinanceiroCaseStudy() {
 
       {/* The Solution */}
       <section className="py-20">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto px-4 md:px-6 lg:px-8 xl:px-12">
           <h2 className="text-3xl font-bold mb-8">
             The <span className="text-accent">Solution</span>
           </h2>
@@ -161,7 +161,7 @@ export default function DashboardFinanceiroCaseStudy() {
 
       {/* AI & Automation */}
       <section className="py-20 bg-muted">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto px-4 md:px-6 lg:px-8 xl:px-12">
           <h2 className="text-3xl font-bold mb-8">
             AI & <span className="text-accent">Automation</span>
           </h2>
@@ -213,7 +213,7 @@ export default function DashboardFinanceiroCaseStudy() {
 
       {/* Results */}
       <section className="py-20">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto px-4 md:px-6 lg:px-8 xl:px-12">
           <h2 className="text-3xl font-bold mb-8">
             Results & <span className="text-accent">Impact</span>
           </h2>
@@ -272,7 +272,7 @@ export default function DashboardFinanceiroCaseStudy() {
 
       {/* Tech Stack Deep Dive */}
       <section className="py-20 bg-muted">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto px-4 md:px-6 lg:px-8 xl:px-12">
           <h2 className="text-3xl font-bold mb-8">
             Technology <span className="text-accent">Choices</span>
           </h2>
@@ -311,7 +311,7 @@ export default function DashboardFinanceiroCaseStudy() {
 
       {/* CTA */}
       <section className="py-20">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div className="max-w-4xl mx-auto px-4 md:px-6 lg:px-8 xl:px-12 text-center">
           <h2 className="text-3xl font-bold mb-6">
             Want to Build Something Similar?
           </h2>

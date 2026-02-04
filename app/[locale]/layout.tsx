@@ -50,7 +50,7 @@ export default async function LocaleLayout({
       <body>
         <NextIntlClientProvider messages={messages}>
           <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 xl:px-12">
               <div className="flex justify-between items-center h-16">
                 <a href={`/${locale}`} className="text-2xl font-bold">
                   <span className="text-accent">Empty</span> AI Agency
@@ -87,7 +87,7 @@ export default async function LocaleLayout({
             {children}
           </main>
           <footer className="bg-muted border-t border-border mt-20">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 xl:px-12 py-12">
               <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
                 <div>
                   <h3 className="text-xl font-bold mb-4">

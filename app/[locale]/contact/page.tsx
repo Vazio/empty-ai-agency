@@ -1,21 +1,25 @@
+import { useTranslations } from 'next-intl';
+
 export default function Contact() {
+  const t = useTranslations('contact');
+  
   return (
     <div className="min-h-screen py-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 xl:px-12">
         {/* Header */}
         <div className="text-center mb-16">
           <h1 className="text-5xl font-bold mb-6">
-            Get in <span className="text-accent">Touch</span>
+            {t('title')} <span className="text-accent">{t('titleAccent')}</span>
           </h1>
           <p className="text-xl text-foreground/70 max-w-3xl mx-auto">
-            Have a project in mind? Let&apos;s discuss how Empty AI Agency can help bring your vision to life.
+            {t('description')}
           </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Contact Information */}
           <div>
-            <h2 className="text-3xl font-bold mb-8">Let&apos;s Connect</h2>
+            <h2 className="text-3xl font-bold mb-8">{t('letsConnect')}</h2>
             
             <div className="space-y-6 mb-12">
               <div className="flex items-start">
@@ -25,8 +29,8 @@ export default function Contact() {
                   </svg>
                 </div>
                 <div>
-                  <h3 className="font-bold mb-1">Email</h3>
-                  <a href="mailto:empty.vl.angola@gmail.com" className="text-foreground/70 hover:text-accent transition-colors">
+                  <h3 className="font-bold mb-1">{t('email')}</h3>
+                  <a href="mailto:empty.vl.angola@gmail.com" className="text-foreground/70 hover:text-accent transition-colors break-all">
                     empty.vl.angola@gmail.com
                   </a>
                 </div>
@@ -39,12 +43,12 @@ export default function Contact() {
                   </svg>
                 </div>
                 <div>
-                  <h3 className="font-bold mb-1">GitHub</h3>
+                  <h3 className="font-bold mb-1">{t('github')}</h3>
                   <a 
                     href="https://github.com/empty-VL" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="text-foreground/70 hover:text-accent transition-colors"
+                    className="text-foreground/70 hover:text-accent transition-colors break-all"
                   >
                     github.com/empty-VL
                   </a>
@@ -59,39 +63,39 @@ export default function Contact() {
                   </svg>
                 </div>
                 <div>
-                  <h3 className="font-bold mb-1">Location</h3>
-                  <p className="text-foreground/70">Angola</p>
+                  <h3 className="font-bold mb-1">{t('location')}</h3>
+                  <p className="text-foreground/70">{t('angola')}</p>
                 </div>
               </div>
             </div>
 
             {/* What to Expect */}
             <div className="bg-muted rounded-xl p-6 border border-border">
-              <h3 className="text-xl font-bold mb-4">What to Expect</h3>
+              <h3 className="text-xl font-bold mb-4">{t('whatToExpect.title')}</h3>
               <ul className="space-y-3 text-foreground/70">
                 <li className="flex items-start">
                   <svg className="w-5 h-5 text-accent mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
-                  <span>Response within 24-48 hours</span>
+                  <span>{t('whatToExpect.response')}</span>
                 </li>
                 <li className="flex items-start">
                   <svg className="w-5 h-5 text-accent mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
-                  <span>Free initial consultation</span>
+                  <span>{t('whatToExpect.consultation')}</span>
                 </li>
                 <li className="flex items-start">
                   <svg className="w-5 h-5 text-accent mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
-                  <span>Detailed project proposal and timeline</span>
+                  <span>{t('whatToExpect.proposal')}</span>
                 </li>
                 <li className="flex items-start">
                   <svg className="w-5 h-5 text-accent mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
-                  <span>Transparent communication throughout</span>
+                  <span>{t('whatToExpect.communication')}</span>
                 </li>
               </ul>
             </div>
@@ -99,11 +103,11 @@ export default function Contact() {
 
           {/* Contact Form */}
           <div className="bg-muted rounded-2xl p-8 border border-border">
-            <h2 className="text-2xl font-bold mb-6">Send us a Message</h2>
+            <h2 className="text-2xl font-bold mb-6">{t('form.title')}</h2>
             <form className="space-y-6">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium mb-2">
-                  Name *
+                  {t('form.nameRequired')}
                 </label>
                 <input
                   type="text"
@@ -111,13 +115,13 @@ export default function Contact() {
                   name="name"
                   required
                   className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:outline-none focus:border-accent transition-colors"
-                  placeholder="Your name"
+                  placeholder={t('form.name')}
                 />
               </div>
 
               <div>
                 <label htmlFor="email" className="block text-sm font-medium mb-2">
-                  Email *
+                  {t('form.emailRequired')}
                 </label>
                 <input
                   type="email"
@@ -125,45 +129,45 @@ export default function Contact() {
                   name="email"
                   required
                   className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:outline-none focus:border-accent transition-colors"
-                  placeholder="your@email.com"
+                  placeholder={t('form.emailLabel')}
                 />
               </div>
 
               <div>
                 <label htmlFor="company" className="block text-sm font-medium mb-2">
-                  Company (Optional)
+                  {t('form.company')}
                 </label>
                 <input
                   type="text"
                   id="company"
                   name="company"
                   className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:outline-none focus:border-accent transition-colors"
-                  placeholder="Your company"
+                  placeholder={t('form.company')}
                 />
               </div>
 
               <div>
                 <label htmlFor="project" className="block text-sm font-medium mb-2">
-                  Project Type
+                  {t('form.projectType')}
                 </label>
                 <select
                   id="project"
                   name="project"
                   className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:outline-none focus:border-accent transition-colors"
                 >
-                  <option value="">Select a project type</option>
-                  <option value="web-app">Web Application</option>
-                  <option value="mobile-app">Mobile Application</option>
-                  <option value="ai-automation">AI Automation</option>
-                  <option value="enterprise">Enterprise Solution</option>
-                  <option value="consulting">Consulting</option>
-                  <option value="other">Other</option>
+                  <option value="">{t('form.selectType')}</option>
+                  <option value="web-app">{t('form.webApp')}</option>
+                  <option value="mobile-app">{t('form.mobileApp')}</option>
+                  <option value="ai-automation">{t('form.aiAutomation')}</option>
+                  <option value="enterprise">{t('form.enterprise')}</option>
+                  <option value="consulting">{t('form.consulting')}</option>
+                  <option value="other">{t('form.other')}</option>
                 </select>
               </div>
 
               <div>
                 <label htmlFor="message" className="block text-sm font-medium mb-2">
-                  Message *
+                  {t('form.messageRequired')}
                 </label>
                 <textarea
                   id="message"
@@ -171,7 +175,7 @@ export default function Contact() {
                   required
                   rows={6}
                   className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:outline-none focus:border-accent transition-colors resize-none"
-                  placeholder="Tell us about your project..."
+                  placeholder={t('form.messagePlaceholder')}
                 />
               </div>
 
@@ -179,11 +183,11 @@ export default function Contact() {
                 type="submit"
                 className="w-full px-8 py-4 bg-accent text-white rounded-lg font-semibold hover:bg-accent-dark transition-colors"
               >
-                Send Message
+                {t('form.send')}
               </button>
 
               <p className="text-sm text-foreground/60 text-center">
-                Note: This form is currently for display purposes. Please email us directly at{' '}
+                {t('form.note')}{' '}
                 <a href="mailto:empty.vl.angola@gmail.com" className="text-accent hover:underline">
                   empty.vl.angola@gmail.com
                 </a>
@@ -195,24 +199,23 @@ export default function Contact() {
         {/* Additional Info */}
         <div className="mt-20 bg-gradient-to-br from-accent/5 to-transparent rounded-2xl p-12 border border-accent/20 text-center">
           <h2 className="text-3xl font-bold mb-6">
-            Ready to Start Your Project?
+            {t('cta.title')}
           </h2>
           <p className="text-lg text-foreground/70 max-w-2xl mx-auto mb-8">
-            Whether you&apos;re looking to build a new application, automate your workflows, 
-            or scale your existing infrastructure, we&apos;re here to help.
+            {t('cta.description')}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a 
-              href="/projects" 
-              className="px-8 py-4 border-2 border-accent text-accent rounded-lg font-semibold hover:bg-accent hover:text-white transition-colors"
+              href="../projects" 
+              className="px-8 py-4 border-2 border-accent text-accent rounded-lg font-semibold hover:bg-accent hover:text-white transition-colors whitespace-nowrap"
             >
-              View Our Work
+              {t('cta.viewWork')}
             </a>
             <a 
-              href="/about" 
-              className="px-8 py-4 border-2 border-accent text-accent rounded-lg font-semibold hover:bg-accent hover:text-white transition-colors"
+              href="../about" 
+              className="px-8 py-4 border-2 border-accent text-accent rounded-lg font-semibold hover:bg-accent hover:text-white transition-colors whitespace-nowrap"
             >
-              Learn More About Us
+              {t('cta.learnMore')}
             </a>
           </div>
         </div>

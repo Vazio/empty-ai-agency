@@ -1,4 +1,8 @@
+import { useTranslations } from 'next-intl';
+
 export default function Projects() {
+  const t = useTranslations('projects');
+  
   const projects = [
     {
       title: "Dashboard Financeiro Angola",
@@ -18,7 +22,7 @@ export default function Projects() {
 
   return (
     <div className="min-h-screen py-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 xl:px-12">
         {/* Header */}
         <div className="text-center mb-16">
           <h1 className="text-5xl font-bold mb-6">

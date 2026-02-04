@@ -1,0 +1,63 @@
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#6366f1;stop-opacity:0.1" />
+      <stop offset="100%" style="stop-color:#6366f1;stop-opacity:0.05" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="600" fill="#0a0a0a"/>
+  <rect width="800" height="600" fill="url(#grad1)"/>
+  
+  <!-- Border -->
+  <rect x="1" y="1" width="798" height="598" fill="none" stroke="#27272a" stroke-width="2"/>
+  
+  <!-- Header Bar -->
+  <rect x="0" y="0" width="800" height="60" fill="#18181b" opacity="0.8"/>
+  <text x="30" y="38" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#f4f4f5">
+    <tspan fill="#6366f1">Dashboard</tspan> Financeiro Angola
+  </text>
+  
+  <!-- Stats Cards -->
+  <rect x="30" y="90" width="230" height="120" rx="12" fill="#18181b" stroke="#27272a" stroke-width="1"/>
+  <text x="50" y="125" font-family="Arial, sans-serif" font-size="14" fill="#a1a1aa">Receitas Totais</text>
+  <text x="50" y="160" font-family="Arial, sans-serif" font-size="32" font-weight="bold" fill="#6366f1">AOA 2.5M</text>
+  <text x="50" y="185" font-family="Arial, sans-serif" font-size="12" fill="#22c55e">↑ 12% este mês</text>
+  
+  <rect x="285" y="90" width="230" height="120" rx="12" fill="#18181b" stroke="#27272a" stroke-width="1"/>
+  <text x="305" y="125" font-family="Arial, sans-serif" font-size="14" fill="#a1a1aa">Despesas</text>
+  <text x="305" y="160" font-family="Arial, sans-serif" font-size="32" font-weight="bold" fill="#f4f4f5">AOA 1.2M</text>
+  <text x="305" y="185" font-family="Arial, sans-serif" font-size="12" fill="#ef4444">↓ 5% este mês</text>
+  
+  <rect x="540" y="90" width="230" height="120" rx="12" fill="#18181b" stroke="#27272a" stroke-width="1"/>
+  <text x="560" y="125" font-family="Arial, sans-serif" font-size="14" fill="#a1a1aa">Lucro Líquido</text>
+  <text x="560" y="160" font-family="Arial, sans-serif" font-size="32" font-weight="bold" fill="#22c55e">AOA 1.3M</text>
+  <text x="560" y="185" font-family="Arial, sans-serif" font-size="12" fill="#22c55e">↑ 18% este mês</text>
+  
+  <!-- Chart Area -->
+  <rect x="30" y="240" width="740" height="320" rx="12" fill="#18181b" stroke="#27272a" stroke-width="1"/>
+  <text x="50" y="275" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#f4f4f5">Fluxo de Caixa (Últimos 6 Meses)</text>
+  
+  <!-- Simple Line Chart -->
+  <polyline points="60,470 170,420 280,450 390,390 500,410 610,350 720,330" 
+            fill="none" stroke="#6366f1" stroke-width="3" opacity="0.8"/>
+  <polyline points="60,480 170,470 280,485 390,455 500,465 610,440 720,425" 
+            fill="none" stroke="#ef4444" stroke-width="3" opacity="0.6"/>
+  
+  <!-- Legend -->
+  <rect x="60" y="290" width="20" height="4" fill="#6366f1"/>
+  <text x="90" y="296" font-family="Arial, sans-serif" font-size="12" fill="#a1a1aa">Receitas</text>
+  
+  <rect x="170" y="290" width="20" height="4" fill="#ef4444"/>
+  <text x="200" y="296" font-family="Arial, sans-serif" font-size="12" fill="#a1a1aa">Despesas</text>
+  
+  <!-- Dots on line -->
+  <circle cx="60" cy="470" r="4" fill="#6366f1"/>
+  <circle cx="170" cy="420" r="4" fill="#6366f1"/>
+  <circle cx="280" cy="450" r="4" fill="#6366f1"/>
+  <circle cx="390" cy="390" r="4" fill="#6366f1"/>
+  <circle cx="500" cy="410" r="4" fill="#6366f1"/>
+  <circle cx="610" cy="350" r="4" fill="#6366f1"/>
+  <circle cx="720" cy="330" r="4" fill="#6366f1"/>
+</svg>

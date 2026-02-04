@@ -8,7 +8,7 @@ export default function Home() {
     <div>
       {/* Hero Section */}
       <section className="relative min-h-[90vh] flex items-center justify-center bg-gradient-to-br from-background via-background to-accent/5">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
+        <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 xl:px-12 py-20 text-center">
           <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold mb-6">
             <span className="text-accent">{t('hero.title')}</span>
             <br />
@@ -20,13 +20,13 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a 
               href="./projects" 
-              className="px-8 py-4 bg-accent text-white rounded-lg font-semibold hover:bg-accent-dark transition-colors"
+              className="px-8 py-4 bg-accent text-white rounded-lg font-semibold hover:bg-accent-dark transition-colors whitespace-nowrap"
             >
               {t('hero.viewWork')}
             </a>
             <a 
               href="./contact" 
-              className="px-8 py-4 border-2 border-accent text-accent rounded-lg font-semibold hover:bg-accent hover:text-white transition-colors"
+              className="px-8 py-4 border-2 border-accent text-accent rounded-lg font-semibold hover:bg-accent hover:text-white transition-colors whitespace-nowrap"
             >
               {t('hero.getInTouch')}
             </a>
@@ -36,11 +36,11 @@ export default function Home() {
 
       {/* Services Overview */}
       <section className="py-20 bg-muted">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 xl:px-12">
           <h2 className="text-4xl font-bold text-center mb-12">
             {t('services.title')} <span className="text-accent">{t('services.titleAccent')}</span>
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
             <div className="bg-background p-8 rounded-lg border border-border hover:border-accent transition-colors">
               <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mb-4">
                 <svg className="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -82,7 +82,7 @@ export default function Home() {
 
       {/* Featured Project */}
       <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 xl:px-12">
           <h2 className="text-4xl font-bold text-center mb-12">
             {t('featured.title')} <span className="text-accent">{t('featured.titleAccent')}</span>
           </h2>
@@ -102,7 +102,7 @@ export default function Home() {
                 </div>
                 <a 
                   href="./case-studies/dashboard-financeiro" 
-                  className="inline-flex items-center text-accent hover:text-accent-dark font-semibold"
+                  className="inline-flex items-center text-accent hover:text-accent-dark font-semibold text-base md:text-lg"
                 >
                   {t('featured.readCaseStudy')}
                   <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -110,13 +110,12 @@ export default function Home() {
                   </svg>
                 </a>
               </div>
-              <div className="bg-background rounded-lg border border-border flex items-center justify-center p-8">
-                <div className="text-center text-foreground/50">
-                  <svg className="w-24 h-24 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                  </svg>
-                  <p className="text-sm">Screenshots coming soon</p>
-                </div>
+              <div className="bg-background rounded-lg border border-border overflow-hidden">
+                <img 
+                  src="/images/dashboard-preview-placeholder.svg" 
+                  alt="Dashboard Financeiro Angola Preview" 
+                  className="w-full h-auto object-cover"
+                />
               </div>
             </div>
           </div>
@@ -125,7 +124,7 @@ export default function Home() {
 
       {/* Tech Stack */}
       <section className="py-20 bg-muted">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 xl:px-12">
           <h2 className="text-4xl font-bold text-center mb-12">
             {t('techStack.title')} <span className="text-accent">{t('techStack.titleAccent')}</span>
           </h2>
@@ -141,7 +140,7 @@ export default function Home() {
 
       {/* CTA Section */}
       <section className="py-20">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div className="max-w-4xl mx-auto px-4 md:px-6 lg:px-8 xl:px-12 text-center">
           <h2 className="text-4xl font-bold mb-6">
             {t('cta.title')} <span className="text-accent">{t('cta.titleAccent')}</span>?
           </h2>
@@ -150,7 +149,7 @@ export default function Home() {
           </p>
           <a 
             href="./contact" 
-            className="inline-block px-8 py-4 bg-accent text-white rounded-lg font-semibold hover:bg-accent-dark transition-colors"
+            className="inline-block px-8 py-4 bg-accent text-white rounded-lg font-semibold hover:bg-accent-dark transition-colors whitespace-nowrap"
           >
             {t('cta.button')}
           </a>
