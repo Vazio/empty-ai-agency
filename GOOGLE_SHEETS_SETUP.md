@@ -1,319 +1,248 @@
-# 📊 Google Sheets Contact Form Integration - Setup Guide
+# Google Sheets Integration Setup
 
 ## Overview
 
-The contact form on Empty AI Agency website is integrated with Google Sheets to automatically save all submissions. This guide will walk you through the complete setup process.
+The contact form is configured to save submissions to Google Sheets. The integration requires a Google Cloud service account with Sheets API access.
+
+**Spreadsheet Details:**
+- **Name:** Empty AI Agency - Contacts
+- **ID:** `16WKtLBq04BJTBuJE38m4y8u9XABv-E6LwK1M3N0fqyY`
+- **URL:** https://docs.google.com/spreadsheets/d/16WKtLBq04BJTBuJE38m4y8u9XABv-E6LwK1M3N0fqyY/edit
+- **Owner:** empty.vl.angola@gmail.com
+
+**Sheet Columns:**
+1. Timestamp (auto-generated)
+2. Name
+3. Email
+4. Message
+5. Language (PT/EN)
+6. User Agent
 
 ---
 
-## ✅ Current Status
+## 🔧 Setup Instructions
 
-- ✅ API route created (`app/api/contact/route.ts`)
-- ✅ Client-side form component (`components/ContactForm.tsx`)
-- ✅ Form validation (name, email, message required)
-- ✅ Loading states and error handling
-- ✅ Success/error messages
-- ⚠️ **Google Sheets credentials NOT configured** (logs to console for now)
+### Step 1: Create Google Cloud Service Account
 
----
+1. Go to [Google Cloud Console](https://console.cloud.google.com/)
+2. Select your project or create a new one
+3. Enable the **Google Sheets API**:
+   - Go to "APIs & Services" > "Library"
+   - Search for "Google Sheets API"
+   - Click "Enable"
 
-## 📝 Step 1: Create Google Sheet
+4. Create a service account:
+   - Go to "APIs & Services" > "Credentials"
+   - Click "Create Credentials" > "Service Account"
+   - Name: `empty-ai-agency-sheets`
+   - Description: "Contact form submissions to Google Sheets"
+   - Click "Create and Continue"
+   - Skip role assignment (optional)
+   - Click "Done"
 
-1. Go to [Google Sheets](https://sheets.google.com/)
-2. Create a new spreadsheet
-3. Name it: **"Empty AI Agency - Contacts"**
-4. Set up the following columns in Row 1:
+5. Create a service account key:
+   - Click on the newly created service account
+   - Go to the "Keys" tab
+   - Click "Add Key" > "Create New Key"
+   - Select "JSON" format
+   - Download the JSON key file
 
-| Column A | Column B | Column C | Column D | Column E | Column F | Column G | Column H |
-|----------|----------|----------|----------|----------|----------|----------|----------|
-| Timestamp | Name | Email | Company | Project Type | Message | Locale | IP |
+### Step 2: Share Google Sheet with Service Account
 
-5. **Copy the Spreadsheet ID** from the URL:
+1. Open the downloaded JSON key file
+2. Find the `client_email` field (looks like: `xxx@xxx.iam.gserviceaccount.com`)
+3. Open the Google Sheet: https://docs.google.com/spreadsheets/d/16WKtLBq04BJTBuJE38m4y8u9XABv-E6LwK1M3N0fqyY/edit
+4. Click "Share" button
+5. Add the service account email with "Editor" permissions
+6. **Important:** Uncheck "Notify people" before sharing
+7. Click "Share"
+
+### Step 3: Configure Environment Variables
+
+#### Local Development (.env.local)
+
+Create `.env.local` in the project root:
+
+```env
+GOOGLE_CLIENT_EMAIL=your-service-account@project.iam.gserviceaccount.com
+GOOGLE_PRIVATE_KEY="-----BEGIN PRIVATE KEY-----\nYour private key here\n-----END PRIVATE KEY-----\n"
+GOOGLE_SHEET_ID=16WKtLBq04BJTBuJE38m4y8u9XABv-E6LwK1M3N0fqyY
+```
+
+**Important:**
+- Copy `client_email` from the JSON key file
+- Copy `private_key` from the JSON key file (keep the `\n` characters)
+- Keep the sheet ID as shown above
+
+#### Vercel Production Deployment
+
+1. Go to your Vercel project settings: https://vercel.com/[your-project]/settings/environment-variables
+
+2. Add these environment variables:
+
+   **GOOGLE_CLIENT_EMAIL**
+   - Value: `[service-account-email]@[project].iam.gserviceaccount.com`
+   
+   **GOOGLE_PRIVATE_KEY**
+   - Value: Full private key from JSON (including `-----BEGIN PRIVATE KEY-----` and `-----END PRIVATE KEY-----`)
+   - **Note:** The `\n` characters must be preserved as literal `\n` (not converted to newlines)
+   
+   **GOOGLE_SHEET_ID**
+   - Value: `16WKtLBq04BJTBuJE38m4y8u9XABv-E6LwK1M3N0fqyY`
+
+3. After adding variables, redeploy the project:
+   ```bash
+   vercel --prod
    ```
-   https://docs.google.com/spreadsheets/d/SPREADSHEET_ID_HERE/edit
-                                          ^^^^^^^^^^^^^^^^
-                                          Copy this part
-   ```
 
 ---
 
-## 🔑 Step 2: Create Google Service Account
+## 🧪 Testing
 
-### 2.1 Go to Google Cloud Console
+### Test Locally
 
-1. Visit: https://console.cloud.google.com/
-2. Create a new project or select existing project
-   - Project name: **"Empty AI Agency"**
+1. Ensure `.env.local` is configured
+2. Start the dev server:
+   ```bash
+   npm run dev
+   ```
+3. Navigate to http://localhost:3000/en/contact or http://localhost:3000/pt/contact
+4. Submit the form
+5. Check the Google Sheet for the new entry
 
-### 2.2 Enable Google Sheets API
+### Test in Production
 
-1. In the Cloud Console, go to **APIs & Services** > **Library**
-2. Search for **"Google Sheets API"**
-3. Click on it and click **"Enable"**
+1. Deploy to Vercel with environment variables configured
+2. Visit your production site's contact page
+3. Submit a test form
+4. Verify the entry appears in the Google Sheet
 
-### 2.3 Create Service Account
+---
 
-1. Go to **APIs & Services** > **Credentials**
-2. Click **"Create Credentials"** > **"Service Account"**
-3. Fill in details:
-   - **Service account name:** `empty-ai-contact-form`
-   - **Service account ID:** (auto-generated)
-   - **Description:** "Service account for Empty AI Agency contact form submissions"
-4. Click **"Create and Continue"**
-5. **Grant permissions:** Select role **"Editor"** (or **"Viewer"** if you only need read access)
-6. Click **"Continue"** > **"Done"**
+## 🔄 Fallback Behavior
 
-### 2.4 Create Service Account Key
+The contact form API has built-in fallback mechanisms:
 
-1. In **Credentials**, find your new service account in the list
-2. Click on the service account email
-3. Go to the **"Keys"** tab
-4. Click **"Add Key"** > **"Create new key"**
-5. Select **JSON** format
-6. Click **"Create"**
-7. **A JSON file will download** - keep it safe! ⚠️ **Never commit this file to Git**
+**If credentials are not configured:**
+- ✅ Form still works (user sees success message)
+- 📋 Submissions are logged to server console
+- ⚠️ Console shows configuration reminder
 
-The JSON file will look like this:
+**If Sheets API fails:**
+- ✅ Form still works (user sees success message)
+- 📋 Submissions are logged to server console as backup
+- 🚨 Error is logged for debugging
+
+This ensures the contact form never "breaks" for users, even if Google Sheets has issues.
+
+---
+
+## 📊 Monitoring
+
+**Check Google Sheet:**
+https://docs.google.com/spreadsheets/d/16WKtLBq04BJTBuJE38m4y8u9XABv-E6LwK1M3N0fqyY/edit
+
+**Check Server Logs:**
+- Vercel: https://vercel.com/[your-project]/logs
+- Local: Check terminal output when running `npm run dev`
+
+---
+
+## 🔐 Security Notes
+
+1. **Never commit `.env.local`** - It's already in `.gitignore`
+2. **Service account JSON key** - Store securely, don't commit to git
+3. **Private key in Vercel** - Only store in environment variables, not in code
+4. **Sheet permissions** - Only share with service account email (Editor role)
+5. **Rotate credentials** - If compromised, create new service account key
+
+---
+
+## 🎯 Current Status
+
+- ✅ Google Sheet created and structured
+- ✅ API route implemented with Sheets integration
+- ✅ Contact form component updated with submission logic
+- ✅ Fallback logging implemented
+- ⏳ **Pending:** Service account creation and credential configuration
+- ⏳ **Pending:** Local testing with credentials
+- ⏳ **Pending:** Vercel environment variable setup
+- ⏳ **Pending:** Production deployment and testing
+
+---
+
+## 📝 Quick Reference
+
+**Sheet ID:** `16WKtLBq04BJTBuJE38m4y8u9XABv-E6LwK1M3N0fqyY`
+
+**API Endpoint:** `/api/contact`
+
+**Method:** POST
+
+**Request Body:**
 ```json
 {
-  "type": "service_account",
-  "project_id": "your-project-id",
-  "private_key_id": "...",
-  "private_key": "-----BEGIN PRIVATE KEY-----\n...\n-----END PRIVATE KEY-----\n",
-  "client_email": "empty-ai-contact-form@your-project.iam.gserviceaccount.com",
-  "client_id": "...",
-  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
-  "token_uri": "https://oauth2.googleapis.com/token",
-  ...
+  "name": "string (required)",
+  "email": "string (required, validated)",
+  "company": "string (optional)",
+  "project": "string (optional)",
+  "message": "string (required)",
+  "locale": "string (pt|en)"
+}
+```
+
+**Response (Success):**
+```json
+{
+  "success": true,
+  "message": "Contact form submitted successfully"
+}
+```
+
+**Response (Error):**
+```json
+{
+  "error": "Error message",
+  "message": "Detailed error description"
 }
 ```
 
 ---
 
-## 🔐 Step 3: Share Google Sheet with Service Account
+## ❓ Troubleshooting
 
-1. Open your Google Sheet: **"Empty AI Agency - Contacts"**
-2. Click the **"Share"** button (top right)
-3. Enter the **service account email** (from the JSON file):
-   ```
-   empty-ai-contact-form@your-project.iam.gserviceaccount.com
-   ```
-4. Set permission: **Editor**
-5. **Uncheck "Notify people"**
-6. Click **"Share"**
+### "Missing required fields" error
+- Ensure name, email, and message are provided
+- Check form validation
 
-✅ The service account now has access to write to your sheet!
+### "Invalid email format" error
+- Email must match pattern: `xxx@xxx.xxx`
 
----
+### Submissions not appearing in sheet
+1. Check if service account email has Editor access to sheet
+2. Verify environment variables are set correctly
+3. Check `GOOGLE_PRIVATE_KEY` has proper `\n` characters
+4. Check Vercel logs for API errors
+5. Verify sheet ID matches: `16WKtLBq04BJTBuJE38m4y8u9XABv-E6LwK1M3N0fqyY`
 
-## ⚙️ Step 4: Configure Environment Variables
-
-### 4.1 Create `.env.local` file
-
-In the website root directory, create `.env.local`:
-
-```bash
-cd /path/to/empty-ai-agency/website
-touch .env.local
-```
-
-### 4.2 Add credentials to `.env.local`
-
-Open `.env.local` and add the following (using values from your JSON file):
-
-```env
-# Google Sheets API Configuration
-GOOGLE_CLIENT_EMAIL=empty-ai-contact-form@your-project.iam.gserviceaccount.com
-GOOGLE_PRIVATE_KEY="-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQC...\n-----END PRIVATE KEY-----\n"
-GOOGLE_SHEET_ID=1a2b3c4d5e6f7g8h9i0j1k2l3m4n5o6p
-```
-
-**Important notes:**
-- ✅ **Keep the quotes around `GOOGLE_PRIVATE_KEY`**
-- ✅ **Keep the `\n` characters** (they represent line breaks)
-- ✅ **Do NOT commit `.env.local` to Git** (it's already in `.gitignore`)
-- ✅ Copy the entire `private_key` value from the JSON file (including `-----BEGIN` and `-----END`)
-
-### 4.3 Verify `.gitignore`
-
-Make sure `.env.local` is in `.gitignore`:
-
-```
-.env.local
-.env
-```
+### Google Sheets API errors
+- Check if Sheets API is enabled in Google Cloud Console
+- Verify service account has necessary permissions
+- Check quota limits (shouldn't be an issue for contact forms)
 
 ---
 
-## 🚀 Step 5: Deploy to Vercel
+## 🚀 Next Steps
 
-### 5.1 Add Environment Variables to Vercel
-
-1. Go to your Vercel project: https://vercel.com/your-username/empty-ai-agency
-2. Go to **Settings** > **Environment Variables**
-3. Add all three variables:
-
-| Key | Value | Environment |
-|-----|-------|-------------|
-| `GOOGLE_CLIENT_EMAIL` | (service account email) | Production, Preview, Development |
-| `GOOGLE_PRIVATE_KEY` | (full private key with quotes) | Production, Preview, Development |
-| `GOOGLE_SHEET_ID` | (spreadsheet ID) | Production, Preview, Development |
-
-**For `GOOGLE_PRIVATE_KEY`:**
-- Keep the quotes: `"-----BEGIN...-----END PRIVATE KEY-----\n"`
-- Make sure all `\n` characters are preserved
-
-### 5.2 Redeploy
-
-After adding environment variables:
-1. Go to **Deployments**
-2. Click on the latest deployment
-3. Click **"Redeploy"** or push a new commit to trigger auto-deployment
+1. **Create service account** following Step 1 above
+2. **Download JSON key** and extract credentials
+3. **Share sheet** with service account email
+4. **Configure `.env.local`** for local testing
+5. **Test locally** to verify integration works
+6. **Configure Vercel** environment variables
+7. **Deploy to production** and test live
+8. **Monitor** submissions in Google Sheet
 
 ---
 
-## ✅ Step 6: Test the Integration
-
-### 6.1 Local Testing
-
-1. Start the dev server:
-   ```bash
-   npm run dev
-   ```
-
-2. Open: http://localhost:3000/en/contact
-
-3. Fill out the form and submit
-
-4. **Check the Google Sheet** - you should see a new row!
-
-5. Check server console for logs:
-   ```
-   ✅ Contact form saved to Google Sheets: { name: 'Test User', email: 'test@example.com', locale: 'en' }
-   ```
-
-### 6.2 Production Testing
-
-1. Open: https://empty-ai-agency.vercel.app/en/contact
-2. Submit a test form
-3. Check the Google Sheet for the new entry
-
-### 6.3 If Credentials Are NOT Configured
-
-The form will still work! It will:
-- ✅ Validate inputs
-- ✅ Show success message
-- ✅ Log to server console
-- ⚠️ **But won't save to Google Sheets**
-
-Console output will show:
-```
-================================================================================
-📧 CONTACT FORM SUBMISSION (Google Sheets pending configuration)
-================================================================================
-Timestamp: 2026-02-04T09:30:00.000Z
-Name: John Doe
-Email: john@example.com
-Company: Acme Corp
-Project Type: web-app
-Message: I need a website
-Locale: en
-IP: 192.168.1.1
-================================================================================
-⚠️  TODO: Configure Google Sheets credentials to save to spreadsheet
-   Set: GOOGLE_CLIENT_EMAIL, GOOGLE_PRIVATE_KEY, GOOGLE_SHEET_ID
-================================================================================
-```
-
----
-
-## 🐛 Troubleshooting
-
-### Error: "Failed to submit"
-
-**Check:**
-1. Environment variables are set correctly in Vercel
-2. Private key has proper quotes and `\n` characters
-3. Service account has Editor access to the sheet
-4. Google Sheets API is enabled in Cloud Console
-
-**View logs:**
-- **Vercel:** Go to your deployment > **Functions** > Click on `/api/contact`
-- **Local:** Check terminal console
-
-### Error: "Invalid credentials"
-
-**Solution:**
-- Double-check `GOOGLE_CLIENT_EMAIL` matches the service account email
-- Verify `GOOGLE_PRIVATE_KEY` is copied exactly from JSON (with `\n` and quotes)
-
-### Error: "Permission denied"
-
-**Solution:**
-- Make sure you shared the Google Sheet with the service account email
-- Grant **Editor** permission (not Viewer)
-
-### Form submits but no data in sheet
-
-**Check:**
-1. `GOOGLE_SHEET_ID` is correct (copy from URL)
-2. Sheet is named `Sheet1` (or update range in API route)
-3. Check Vercel function logs for errors
-
----
-
-## 📊 Viewing Submissions
-
-Once configured, all contact form submissions will appear in your Google Sheet:
-
-**Google Sheet:** [Empty AI Agency - Contacts](https://docs.google.com/spreadsheets/d/YOUR_SHEET_ID/edit)
-
-### Data Captured
-
-- **Timestamp:** When the form was submitted (ISO 8601 format)
-- **Name:** User's name
-- **Email:** User's email address
-- **Company:** Company name (optional)
-- **Project Type:** Selected project type (optional)
-- **Message:** User's message
-- **Locale:** Website language (en/pt)
-- **IP:** User's IP address (for spam prevention)
-
-### Additional Features You Can Add
-
-- **Slack notifications:** Use Google Apps Script to send notifications
-- **Auto-reply emails:** Set up Gmail automation
-- **Data analysis:** Create charts and pivot tables
-- **Export to CRM:** Use Zapier or Make.com integrations
-
----
-
-## 🔒 Security Best Practices
-
-1. ✅ **Never commit** `.env.local` or service account JSON to Git
-2. ✅ **Restrict service account permissions** to only what's needed
-3. ✅ **Enable IP restrictions** in Google Cloud Console (optional)
-4. ✅ **Rotate credentials** periodically
-5. ✅ **Monitor usage** in Google Cloud Console for suspicious activity
-6. ✅ **Add rate limiting** to API route (optional, to prevent spam)
-
----
-
-## 📚 Additional Resources
-
-- [Google Sheets API Documentation](https://developers.google.com/sheets/api)
-- [Google Cloud Console](https://console.cloud.google.com/)
-- [Next.js API Routes](https://nextjs.org/docs/app/building-your-application/routing/route-handlers)
-- [Vercel Environment Variables](https://vercel.com/docs/concepts/projects/environment-variables)
-
----
-
-## 🎉 You're Done!
-
-Your contact form is now fully integrated with Google Sheets! Every submission will be automatically saved and you'll have a centralized place to view all inquiries.
-
-**Questions?** Email: empty.vl.angola@gmail.com
-
----
-
-**Built with pride in Angola 🇦🇴**
+For questions or issues, check the Vercel logs or contact the development team.
