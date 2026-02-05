@@ -123,13 +123,13 @@ export default async function Contact({ params }: { params: Promise<{ locale: st
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
             <a 
               href="../projects" 
-              className="px-10 py-4 border-2 border-angola-red text-angola-red rounded-2xl font-semibold text-lg hover:bg-angola-red hover:text-white transition-all duration-300 transform hover:scale-105 whitespace-nowrap"
+              className="px-10 py-4 border-2 border-angola-red text-angola-red rounded-2xl font-semibold text-lg hover:bg-angola-red hover:text-white transition-all duration-300 transform hover:scale-105 hover:-translate-y-1 shadow-lg hover:shadow-2xl whitespace-nowrap"
             >
               {t('cta.viewWork')}
             </a>
             <a 
               href="../about" 
-              className="px-10 py-4 border-2 border-angola-red text-angola-red rounded-2xl font-semibold text-lg hover:bg-angola-red hover:text-white transition-all duration-300 transform hover:scale-105 whitespace-nowrap"
+              className="px-10 py-4 border-2 border-angola-red text-angola-red rounded-2xl font-semibold text-lg hover:bg-angola-red hover:text-white transition-all duration-300 transform hover:scale-105 hover:-translate-y-1 shadow-lg hover:shadow-2xl whitespace-nowrap"
             >
               {t('cta.learnMore')}
             </a>
