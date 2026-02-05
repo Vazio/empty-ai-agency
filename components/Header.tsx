@@ -31,13 +31,13 @@ export default function Header({ locale }: HeaderProps) {
 
   return (
     <nav 
-      className={`sticky top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`sticky top-0 left-0 right-0 w-full z-50 transition-all duration-300 ${
         scrolled 
-          ? 'backdrop-blur-xl bg-white/95 dark:bg-gray-950/95 shadow-soft' 
-          : 'backdrop-blur-lg bg-white/90 dark:bg-gray-950/90'
-      } border-b border-gray-200/50 dark:border-gray-800/50`}
+          ? 'backdrop-blur-xl bg-gray-950/95 shadow-soft' 
+          : 'backdrop-blur-lg bg-gray-950/90'
+      } border-b border-gray-800/50`}
     >
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+      <div className="w-full px-6 sm:px-8 lg:px-12">
         <div className="flex justify-between items-center h-16 sm:h-18">
           {/* Logo */}
           <Link 
@@ -45,7 +45,7 @@ export default function Header({ locale }: HeaderProps) {
             className="text-xl sm:text-2xl font-bold transition-all duration-300 hover:opacity-80"
           >
             <span className="gradient-text">Empty</span>{' '}
-            <span className="text-gray-900 dark:text-white">AI</span>
+            <span className="text-white">AI</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -54,7 +54,7 @@ export default function Header({ locale }: HeaderProps) {
               <Link
                 key={item.key}
                 href={item.href}
-                className="relative px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-angola-red dark:hover:text-angola-red transition-colors duration-200 rounded-lg hover:bg-gray-100/50 dark:hover:bg-gray-800/50"
+                className="relative px-4 py-2 text-sm font-medium text-gray-300 hover:text-angola-red dark:hover:text-angola-red transition-colors duration-200 rounded-lg hover:bg-gray-800/50"
               >
                 {item.label}
               </Link>
@@ -67,7 +67,7 @@ export default function Header({ locale }: HeaderProps) {
           {/* Mobile Menu Button */}
           <button 
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden p-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-angola-red/20"
+            className="md:hidden p-2 text-gray-300 hover:bg-gray-800 rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-angola-red/20"
             aria-label="Toggle mobile menu"
           >
             {mobileMenuOpen ? (
@@ -94,12 +94,12 @@ export default function Header({ locale }: HeaderProps) {
                 key={item.key}
                 href={item.href}
                 onClick={() => setMobileMenuOpen(false)}
-                className="block py-2.5 px-4 text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-angola-red hover:bg-gray-100/50 dark:hover:bg-gray-800/50 rounded-lg transition-all duration-200"
+                className="block py-2.5 px-4 text-sm font-medium text-gray-300 hover:text-angola-red hover:bg-gray-800/50 rounded-lg transition-all duration-200"
               >
                 {item.label}
               </Link>
             ))}
-            <div className="pt-3 pb-1 px-4 border-t border-gray-200 dark:border-gray-800">
+            <div className="pt-3 pb-1 px-4 border-t border-gray-800">
               <LanguageSwitcher />
             </div>
           </div>
