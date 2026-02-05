@@ -6,7 +6,7 @@
   --accent: #f97316; /* orange-500 - Empty brand color (tech) */
   --accent-dark: #ea580c; /* orange-600 */
   --accent-light: #fb923c; /* orange-400 */
-  --muted: #f5f5f5;
+  --muted: #fafafa;
   --border: #e5e5e5;
   
   /* Angola Colors */
@@ -17,6 +17,11 @@
   --angola-yellow-dark: #cc9f00;
   --angola-yellow-light: #ffd633;
   --angola-black: #000000;
+  
+  /* Modern Gradient Variables */
+  --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --gradient-accent: linear-gradient(135deg, #CE1126 0%, #f97316 100%);
+  --gradient-soft: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
 }
 
 @theme inline {
@@ -56,17 +61,18 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', system-ui, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', system-ui, sans-serif;
   font-size: 1rem;
-  line-height: 1.6;
+  line-height: 1.65;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  letter-spacing: -0.011em;
 }
 
 @media (min-width: 768px) {
   body {
-    font-size: 1.125rem; /* text-lg on desktop */
-    line-height: 1.75;
+    font-size: 1.0625rem; /* 17px - optimal reading size */
+    line-height: 1.7;
   }
 }
 
@@ -108,4 +114,71 @@ button, a, input, textarea, select {
 /* Premium shadow utilities */
 .shadow-3xl {
   box-shadow: 0 35px 60px -15px rgba(0, 0, 0, 0.3);
+}
+
+/* Modern soft shadows */
+.shadow-soft {
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.06);
+}
+
+.shadow-soft-lg {
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+}
+
+/* Glass effect */
+.glass {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+@media (prefers-color-scheme: dark) {
+  .glass {
+    background: rgba(26, 26, 26, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+}
+
+/* Better heading typography */
+h1, h2, h3 {
+  letter-spacing: -0.025em;
+  font-weight: 700;
+}
+
+h1 {
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  line-height: 1.1;
+}
+
+h2 {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  line-height: 1.15;
+}
+
+h3 {
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  line-height: 1.25;
+}
+
+/* Floating animation */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #CE1126 0%, #f97316 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
